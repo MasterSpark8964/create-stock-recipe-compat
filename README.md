@@ -2,7 +2,25 @@
 
 让机械动力仓管通过 JEI 请求更多配方的材料，并在缺料时尝试展开中间配方。
 
-**当前版本：0.3.6 · 实验版（Alpha）· Minecraft Forge 1.20.1 · 客户端附属 Mod**
+**可下载成品：0.4.6-client.1 · 仓库源码：0.3.6 · Minecraft Forge 1.20.1 · 客户端附属 Mod**
+
+## JAR 下载（0.4.6-client.1）
+
+[**点击下载 create_stock_recipe_compat-0.4.6-client.1.jar**](https://github.com/MasterSpark8964/create-stock-recipe-compat/raw/refs/heads/main/downloads/create_stock_recipe_compat-0.4.6-client.1.jar) · [SHA-256](downloads/create_stock_recipe_compat-0.4.6-client.1.jar.sha256)
+
+仅安装到客户端的 `mods` 文件夹，更新时移除旧版同名 Mod。以下范围读取自此 JAR 的 `META-INF/mods.toml`，不代表范围内所有组合均经过实测：
+
+| 依赖 | 要求 |
+| --- | --- |
+| Minecraft | 1.20.1（声明范围 ≥1.20.1、<1.20.2） |
+| Forge | ≥47.4.18、<48 |
+| Create / 机械动力 | ≥6.0.8、<6.0.9 |
+| JEI（Forge） | ≥15.8.2.26、<15.21 |
+| Java | 17（Minecraft 1.20.1 / Forge 运行环境） |
+
+需要自行安装以上依赖及 Create 发行版要求的依赖。该 JAR 声明为客户端附属 Mod，通过 Create 请求材料，不执行配方；不需要服务器和其他玩家安装本附属 Mod。
+
+**源码与验证说明：** 此下载为用户提供的 `0.4.6-client.1` 成品，作者及对应源码待确认。本仓库当前源码、下方功能说明及历史验证记录仍对应 **0.3.6**，尚未同步此新版对应源码，也未验证该成品与仓库源码的一致性。本次只读取 JAR 元数据并核对文件完整性，没有运行游戏或测试。
 
 ## 前言
 
@@ -23,7 +41,7 @@
 
 **它请求的是材料，不会替你执行中间合成、操作机器或配送流体。**
 
-## 支持环境与安装
+## 0.3.6 源码的构建环境与安装
 
 以下为项目的构建目标，不代表所有相近版本都经过运行验证。
 
