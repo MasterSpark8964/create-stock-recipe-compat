@@ -35,7 +35,7 @@ public abstract class StockKeeperRequestScreenMixin {
    ) {
       if (entry instanceof JeiMaterialCraftableBigItemStack compat) {
          try {
-            cir.setReturnValue(MaterialAllocation.calculate((StockKeeperRequestScreen)this, compat, summary, modifier, newTypeLimit, false));
+            cir.setReturnValue(MaterialAllocation.calculate((StockKeeperRequestScreen)(Object)this, compat, summary, modifier, newTypeLimit, false));
          } catch (Throwable var8) {
             CompatRecipeTransfer.reportFailure(var8);
             cir.setReturnValue(Pair.of(0, List.of()));

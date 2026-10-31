@@ -95,7 +95,7 @@ public final class JeiRecipeIngredientExtractor {
          for (IRecipeSlotView slotx : slots.getSlotViews(RecipeIngredientRole.OUTPUT)) {
             result = slotx.getDisplayedItemStack()
                .filter(s -> !s.isEmpty())
-               .orElseGet(() -> slot.getItemStacks().filter(s -> !s.isEmpty()).findFirst().orElse(ItemStack.EMPTY));
+               .orElseGet(() -> slotx.getItemStacks().filter(s -> !s.isEmpty()).findFirst().orElse(ItemStack.EMPTY));
             if (!result.isEmpty()) {
                break;
             }
@@ -122,7 +122,7 @@ public final class JeiRecipeIngredientExtractor {
 
    private static List<Ingredient> nativeInputs(Object source) {
       if (source.getClass() == ShapedRecipe.class || source.getClass() == ShapelessRecipe.class) {
-         return ((Recipe)source).getIngredients().stream().filter(i -> !i.isEmpty()).toList();
+         return ((Recipe<?>)source).getIngredients().stream().filter(i -> !i.isEmpty()).toList();
       } else if (source.getClass() == SmithingTransformRecipe.class) {
          SmithingTransformIngredientsAccessor access = (SmithingTransformIngredientsAccessor)source;
          return List.of(access.csrc$template(), access.csrc$base(), access.csrc$addition()).stream().filter(i -> !i.isEmpty()).toList();
