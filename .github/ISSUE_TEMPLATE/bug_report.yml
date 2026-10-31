@@ -1,0 +1,41 @@
+name: 问题反馈
+description: 材料转移、递归补料、兼容性或卡顿问题
+title: "[问题] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        本项目为实验版。请提供具体配方和可复现的步骤；提交日志前请移除不希望公开的个人信息。
+  - type: textarea
+    id: versions
+    attributes:
+      label: 版本信息
+      description: Minecraft、Forge、Create、JEI、本 Mod，以及与该配方有关的模组版本。整合包名称可补充，但不能代替版本。
+    validations:
+      required: true
+  - type: textarea
+    id: recipe
+    attributes:
+      label: 配方、库存与配置
+      description: 配方 ID、输入与输出数量、相关库存和已加入订单；递归问题请补充中间配方与修改过的配置。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 从打开仓管到出现问题的操作过程；说明能否稳定复现。
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 预期与实际结果
+      description: 请记录完整错误提示；卡顿问题补充发生时机和大致持续时间。
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志与补充材料
+      description: 相关日志片段、截图或精简后的配方定义。不要提交账号凭证或整个私人存档。

@@ -1,0 +1,7 @@
+Server: filled blaze keeper present; stock link online and attached; UUID=a55a520b-d309-4217-af70-64d7aa557264
+Server accurate network inventory: [(Netherite Ingot x10), (Smithing Template x10), (Diamond Sword x10)]
+Client live inventory: [(Netherite Ingot x10), (Smithing Template x10), (Diamond Sword x10)]
+Recipe: minecraft:netherite_sword_smithing
+JEI INPUT: [[1 netherite_upgrade_smithing_template], [1 diamond_sword], [1 netherite_ingot]]
+Stock order: [(Smithing Template x1), (Diamond Sword x1), (Netherite Ingot x1)]
+PASS actual Packager heldBox contents=[1 diamond_sword, 1 netherite_ingot, 1 netherite_upgrade_smithing_template]; original sendIt + PackageOrderRequestPacket

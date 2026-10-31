@@ -1,0 +1,82 @@
+[
+  {
+    "output": "ae2:fluix_upgrade_smithing_template",
+    "template": "muban:iron_upgradeforgingtemplate",
+    "base": "ae2:fluix_block",
+    "addition": "ae2:quartz_block",
+    "source": "kubejs/server_scripts/ae.js",
+    "status": "source-inspected; in-game verification pending"
+  },
+  {
+    "output": "ae2:nether_quartz_sword",
+    "template": "muban:stone_upgrade_upgradeforgingtemplate",
+    "base": "minecraft:stone_sword",
+    "addition": "minecraft:quartz",
+    "source": "kubejs/server_scripts/ae.js",
+    "status": "source-inspected; in-game verification pending"
+  },
+  {
+    "output": "ae2:certus_quartz_sword",
+    "template": "muban:stone_upgrade_upgradeforgingtemplate",
+    "base": "minecraft:stone_sword",
+    "addition": "#forge:gems/certus_quartz",
+    "source": "kubejs/server_scripts/ae.js",
+    "status": "source-inspected; in-game verification pending"
+  },
+  {
+    "output": "ae2:nether_quartz_pickaxe",
+    "template": "muban:stone_upgrade_upgradeforgingtemplate",
+    "base": "minecraft:stone_pickaxe",
+    "addition": "minecraft:quartz",
+    "source": "kubejs/server_scripts/ae.js",
+    "status": "source-inspected; in-game verification pending"
+  },
+  {
+    "output": "ae2:certus_quartz_pickaxe",
+    "template": "muban:stone_upgrade_upgradeforgingtemplate",
+    "base": "minecraft:stone_pickaxe",
+    "addition": "#forge:gems/certus_quartz",
+    "source": "kubejs/server_scripts/ae.js",
+    "status": "source-inspected; in-game verification pending"
+  },
+  {
+    "output": "ae2:nether_quartz_axe",
+    "template": "muban:stone_upgrade_upgradeforgingtemplate",
+    "base": "minecraft:stone_axe",
+    "addition": "minecraft:quartz",
+    "source": "kubejs/server_scripts/ae.js",
+    "status": "source-inspected; in-game verification pending"
+  },
+  {
+    "output": "ae2:certus_quartz_axe",
+    "template": "muban:stone_upgrade_upgradeforgingtemplate",
+    "base": "minecraft:stone_axe",
+    "addition": "#forge:gems/certus_quartz",
+    "source": "kubejs/server_scripts/ae.js",
+    "status": "source-inspected; in-game verification pending"
+  },
+  {
+    "output": "ae2:nether_quartz_shovel",
+    "template": "muban:stone_upgrade_upgradeforgingtemplate",
+    "base": "minecraft:stone_shovel",
+    "addition": "minecraft:quartz",
+    "source": "kubejs/server_scripts/ae.js",
+    "status": "source-inspected; in-game verification pending"
+  },
+  {
+    "output": "ae2:certus_quartz_shovel",
+    "template": "muban:stone_upgrade_upgradeforgingtemplate",
+    "base": "minecraft:stone_shovel",
+    "addition": "#forge:gems/certus_quartz",
+    "source": "kubejs/server_scripts/ae.js",
+    "status": "source-inspected; in-game verification pending"
+  },
+  {
+    "output": "ae2:nether_quartz_hoe",
+    "template": "muban:stone_upgrade_upgradeforgingtemplate",
+    "base": "minecraft:stone_hoe",
+    "addition": "minecraft:quartz",
+    "source": "kubejs/server_scripts/ae.js",
+    "status": "source-inspected; in-game verification pending"
+  }
+]

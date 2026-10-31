@@ -1,0 +1,68 @@
+PASS preview minecraft:smithing
+PASS preview is read-only
+PASS transfer minecraft:smithing
+PASS public handler Mixin active
+PASS no crafting metadata
+PASS material order is populated
+PASS minecraft:smithing recipe=net.minecraft.world.item.crafting.SmithingTrimRecipe@d10f1c0 order=[(Smithing Template x1), (Netherite Helmet x1), (Iron Ingot x1)]
+PASS preview minecraft:furnace
+PASS preview is read-only
+PASS transfer minecraft:furnace
+PASS public handler Mixin active
+PASS no crafting metadata
+PASS material order is populated
+PASS minecraft:furnace recipe=net.minecraft.world.item.crafting.SmeltingRecipe@50e2d707 order=[(Netherrack x1)]
+PASS preview minecraft:blasting
+PASS preview is read-only
+PASS transfer minecraft:blasting
+PASS public handler Mixin active
+PASS no crafting metadata
+PASS material order is populated
+PASS minecraft:blasting recipe=net.minecraft.world.item.crafting.BlastingRecipe@29cbb88e order=[(Deepslate Copper Ore x1)]
+PASS preview minecraft:smoking
+PASS preview is read-only
+PASS transfer minecraft:smoking
+PASS public handler Mixin active
+PASS no crafting metadata
+PASS material order is populated
+PASS minecraft:smoking recipe=net.minecraft.world.item.crafting.SmokingRecipe@8eafc75 order=[(Raw Chicken x1)]
+PASS preview minecraft:stonecutting
+PASS preview is read-only
+PASS transfer minecraft:stonecutting
+PASS public handler Mixin active
+PASS no crafting metadata
+PASS material order is populated
+PASS minecraft:stonecutting recipe=net.minecraft.world.item.crafting.StonecutterRecipe@41013912 order=[(Cut Limestone x1)]
+PASS crafting pass-through
+PASS crafting pass-through
+PASS crafting pass-through
+PASS crafting pass-through
+PASS crafting pass-through
+PASS crafting pass-through
+PASS preview csrc_integration_test:materials
+PASS preview is read-only
+PASS transfer csrc_integration_test:materials
+PASS public handler Mixin active
+PASS no crafting metadata
+PASS material order is populated
+PASS output x4 initial batch
+PASS input x4
+PASS input x2
+PASS output x16 means four batches
+PASS preview csrc_integration_test:materials
+PASS preview is read-only
+PASS transfer csrc_integration_test:materials
+PASS public handler Mixin active
+PASS no crafting metadata
+PASS material order is populated
+PASS alternative uses copper
+PASS exclusive input keeps iron
+PASS preview csrc_integration_test:materials
+PASS preview is read-only
+PASS transfer csrc_integration_test:materials
+PASS missing stock no mutation
+PASS preview csrc_integration_test:materials
+PASS preview is read-only
+PASS transfer csrc_integration_test:materials
+PASS fluid no partial order
+PASS integration suite (physical package production is a separate test)

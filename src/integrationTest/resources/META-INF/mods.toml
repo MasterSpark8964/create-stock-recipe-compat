@@ -1,0 +1,7 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="csrc_integration_test"
+version="1"
+displayName="CSRC development tests (not distributed)"

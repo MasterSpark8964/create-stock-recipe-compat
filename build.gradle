@@ -1,0 +1,71 @@
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.spongepowered.mixin' version '0.7.38'
+}
+group = 'dev.csrc'
+version = mod_version
+base { archivesName = 'create_stock_recipe_compat' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+sourceSets {
+    integrationTest {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+minecraft {
+    mappings channel: 'official', version: minecraft_version
+    copyIdeResources = true
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+            mods { create_stock_recipe_compat { source sourceSets.main } }
+        }
+        integrationClient {
+            parent runs.client
+            workingDirectory project.file('run')
+            mods { csrc_integration_test { source sourceSets.integrationTest } }
+            property 'csrc.portabilityOnly', project.findProperty('portabilityOnly') ?: 'false'
+            if (project.hasProperty('quickPlayWorld')) args '--quickPlaySingleplayer', project.property('quickPlayWorld')
+        }
+    }
+}
+mixin {
+    add sourceSets.main, 'create_stock_recipe_compat.refmap.json'
+    config 'create_stock_recipe_compat.mixins.json'
+}
+repositories {
+    maven {
+        url = 'https://maven.createmod.net'
+        content { includeGroup 'com.simibubi.create'; includeGroup 'net.createmod.ponder'; includeGroup 'dev.engine-room.flywheel' }
+    }
+    maven { url = 'https://maven.ithundxr.dev/mirror'; content { includeGroup 'com.tterrag.registrate' } }
+    maven { url = 'https://raw.githubusercontent.com/Fuzss/modresources/main/maven/'; content { includeGroup 'fuzs.forgeconfigapiport' } }
+    maven { url = 'https://maven.blamejared.com/'; content { includeGroup 'mezz.jei' } }
+}
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    implementation(fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim")) { transitive = false }
+    implementation fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}")
+    compileOnly fg.deobf("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}")
+    runtimeOnly fg.deobf("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
+    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    implementation 'io.github.llamalad7:mixinextras-forge:0.4.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+test { useJUnitPlatform() }
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('META-INF/mods.toml') { expand version: project.version }
+}
+jar {
+    manifest.attributes 'MixinConfigs': 'create_stock_recipe_compat.mixins.json'
+    finalizedBy 'reobfJar'
+}

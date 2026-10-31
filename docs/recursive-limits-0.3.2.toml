@@ -1,0 +1,11 @@
+# Copy these values into the existing [general] section; do not add a duplicate section.
+# Existing installations preserve their saved maxExpandedIngredients/maxDependencyDepth values.
+[general]
+expandMissingMaterials = true
+maxDependencyDepth = 16
+maxExpandedIngredients = 512
+maxStockVariants = 16384
+maxDependencyRecipes = 65536
+dependencySearchOperations = 2000000
+maxDependencyDecisionFrames = 256
+dependencyPlanningMillis = 500

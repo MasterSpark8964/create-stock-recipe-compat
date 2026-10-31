@@ -120,4 +120,3 @@ sh ./gradlew assemble -x test
 ## 许可证
 
 采用 [MIT License](LICENSE)。本项目不是 Create 或「无限模板」的官方项目。
-
