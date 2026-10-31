@@ -4,7 +4,7 @@
 
 [下载原版 0.4.6-client.1 Jar](https://github.com/MasterSpark8964/create-stock-recipe-compat/raw/refs/heads/main/downloads/create_stock_recipe_compat-0.4.6-client.1.jar)
 
-本仓库的当前实现从上述 Jar 反编译恢复。原来的 0.4.6 源码归档未能找回；恢复版保留实际发布包中的实现和资源，不代表找回了原始注释、格式或完整测试集。恢复过程与验证边界见 [恢复记录](docs/RECOVERY.md)。下载区继续保留原成品。
+本仓库的当前实现从上述 Jar 反编译恢复。原来的 0.4.6 源码归档未能找回；恢复版保留实际发布包中的实现和资源，不代表找回了原始注释、格式或完整测试集。恢复过程与验证边界见 [恢复记录](docs/RECOVERY.md)。全部 Java 源码已编译并重建 Jar，类/成员契约与资源核对通过，现有 19 项单元测试通过。尚未启动游戏或完成联机验收。下载区继续保留原成品。
 
 ## 安装
 

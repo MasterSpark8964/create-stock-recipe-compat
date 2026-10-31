@@ -28,4 +28,10 @@
 
 将开发名称转换因素计入后，编译生成的 74 个类、449 个非 synthetic 方法、294 个非 synthetic 字段与原 Jar 的类/成员契约一致；这属于结构核对，不是全部行为等价的证明。结果见 `docs/recovery/java-contracts.json`。
 
-Gradle 注解处理、重混淆打包和完整测试仍在进行，结果在恢复完成时补充。没有启动游戏，也没有完成服务器未安装本附属时的联机验收。不能把算法对照等同于全部游戏功能已验证。
+Gradle 已完成 compileJava、jar、reobfJar 和 compileTestJava，产出重建 Jar。原 Jar 与重建包的全部 74 个类、449 个非 synthetic 方法、294 个非 synthetic 字段契约，以及 6 项资源内容一致（JSON 按结构比较）。结果见 `docs/recovery/rebuilt-contracts.json`。这不等于逐字节相同或完整行为等价。
+
+本环境通过本地依赖镜像进行构建验证，使用 Forge 同时声明的 mergetool 1.1.7；因 processor 分类包下载受限，使用同版本 Mixin 0.8.5 普通 Jar 中的原有注解处理器及其依赖，重新生成的 refmap 与原包一致。仓库的常规构建配置保留官方 processor 依赖。
+
+Gradle test 任务因离线环境缺少 Flywheel / JEI 客户端运行 Jar 而未启动；随后使用 JUnit Platform Console 1.10.2 对 Gradle 编译出的全部现有测试（CapacityMatcherTest）运行，19 项全部通过，0 项跳过。测试摘要见 `docs/recovery/unit-tests.txt`。不能将此表述为完整 Gradle test/build 任务成功。
+
+此前的 3000 组材料分配与 5000 组按钮布局对照也通过。公开下载区保留原成品；重建验证包不覆盖原 Jar。没有启动游戏，也没有完成服务器未安装本附属时的联机验收。不能把算法对照等同于全部游戏功能已验证。
