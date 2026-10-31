@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'net.minecraftforge.gradle' version '6.0.54'
     id 'org.spongepowered.mixin' version '0.7.38'
 }
 group = 'dev.csrc'
@@ -54,7 +54,9 @@ dependencies {
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
-    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common:${jei_version}")) { transitive = false }
+    compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-gui:${jei_version}")) { transitive = false }
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_runtime_version}")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     implementation 'io.github.llamalad7:mixinextras-forge:0.4.1'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'

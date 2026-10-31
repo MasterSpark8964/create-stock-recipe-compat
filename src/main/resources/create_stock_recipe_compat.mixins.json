@@ -4,6 +4,16 @@
   "package": "dev.csrc.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "create_stock_recipe_compat.refmap.json",
-  "client": ["StockKeeperTransferHandlerMixin", "StockKeeperRequestScreenMixin"],
-  "injectors": {"defaultRequire": 1}
+  "client": [
+    "StockKeeperTransferHandlerMixin",
+    "StockKeeperRequestScreenMixin",
+    "LegacyRecipesGuiAccessor",
+    "LegacyRecipeGuiLayoutsAccessor",
+    "LegacyRecipesGuiSpacingMixin",
+    "LegacyRecipeGuiSpacingMixin",
+    "SmithingTransformIngredientsAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

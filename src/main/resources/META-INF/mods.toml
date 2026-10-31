@@ -4,9 +4,10 @@ license="MIT"
 [[mods]]
 modId="create_stock_recipe_compat"
 version="${version}"
-displayName="Create Stock Recipe Compat"
+displayName="Create Stock Recipe Compat (Client)"
+# Client-side addon: Forge accepts a remote server without this mod.
 displayTest="IGNORE_SERVER_VERSION"
-description='''Requests JEI item inputs through the Create Stock Keeper. Does not execute recipes.'''
+description='''Client-only JEI material preparation for the Create Stock Keeper. Install only on your client; servers and other players do not need this addon. Uses Create stock requests; does not execute recipes.'''
 [[dependencies.create_stock_recipe_compat]]
 modId="forge"
 mandatory=true
@@ -28,6 +29,6 @@ side="CLIENT"
 [[dependencies.create_stock_recipe_compat]]
 modId="jei"
 mandatory=true
-versionRange="[15.20.0.130,16)"
+versionRange="[15.8.2.26,15.21)"
 ordering="AFTER"
 side="CLIENT"

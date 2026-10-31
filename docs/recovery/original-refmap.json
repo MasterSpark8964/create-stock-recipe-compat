@@ -1,0 +1,18 @@
+{
+  "mappings": {
+    "dev/csrc/mixin/SmithingTransformIngredientsAccessor": {
+      "template": "f_265949_:Lnet/minecraft/world/item/crafting/Ingredient;",
+      "base": "f_265888_:Lnet/minecraft/world/item/crafting/Ingredient;",
+      "addition": "f_265907_:Lnet/minecraft/world/item/crafting/Ingredient;"
+    }
+  },
+  "data": {
+    "searge": {
+      "dev/csrc/mixin/SmithingTransformIngredientsAccessor": {
+        "template": "f_265949_:Lnet/minecraft/world/item/crafting/Ingredient;",
+        "base": "f_265888_:Lnet/minecraft/world/item/crafting/Ingredient;",
+        "addition": "f_265907_:Lnet/minecraft/world/item/crafting/Ingredient;"
+      }
+    }
+  }
+}
