@@ -2,9 +2,15 @@
 
 机械动力仓库管理员的 JEI 原料准备客户端附属。
 
-[下载原版 0.4.6-client.1 Jar](https://github.com/MasterSpark8964/create-stock-recipe-compat/raw/refs/heads/main/downloads/create_stock_recipe_compat-0.4.6-client.1.jar)
+[下载 0.4.6-client.1 Jar](https://github.com/MasterSpark8964/create-stock-recipe-compat/raw/refs/heads/main/downloads/create_stock_recipe_compat-0.4.6-client.1.jar)
 
-本仓库的当前实现从上述 Jar 反编译恢复。原来的 0.4.6 源码归档未能找回；恢复版保留实际发布包中的实现和资源，不代表找回了原始注释、格式或完整测试集。恢复过程与验证边界见 [恢复记录](docs/RECOVERY.md)。全部 Java 源码已编译并重建 Jar，类/成员契约与资源核对通过，现有 19 项单元测试通过。尚未启动游戏或完成联机验收。下载区继续保留原成品。
+## 前言
+
+本人在游玩「无限模板」整合包时，希望能通过机械动力仓管更方便地为锻造台配方下单，于是围绕这个需求开始了一个 vibe coding 项目。
+
+最初只是想补上锻造台的适配，后来逐步加入了缺料时展开中间配方、按材料批次下单，以及减少无效搜索的优化。这个项目从自己的游玩需求出发，但实现上尽量不绑定某一个整合包，也不修改机械动力原 Mod。
+
+目前它仍是实验性作品。早期基础功能有实测记录，后续递归补料与优化版本主要经过代码检查和编译，尚未完成系统的运行验证。欢迎带着具体配方、版本信息和日志反馈问题，一起把它完善起来。
 
 ## 安装
 
@@ -17,8 +23,6 @@
 | Create | 6.0.8 |
 | JEI Forge | 15.8.2.26–15.20.x |
 | Java | 17 |
-
-这些是发布包的依赖声明，不表示范围内每个组合均已实测。
 
 ## 功能
 
@@ -41,7 +45,7 @@
 
 配方诊断 `general.enableRecipeDiagnostics` 和内存诊断 `general.enableMemoryDiagnostics` 默认关闭，记录仅写入本地。旧配置不会被新默认值覆盖；此前打开过记录的用户需自行关闭。
 
-仓管界面后续增加数量时，台阶等多产物配方的批次数量折算问题仍保留。没有合入 0.5.0 的模组机器与链路界面实验功能。实际连接未装附属的服务器、整合包界面和发包行为尚需游戏内验证。
+在仓管界面后续增加数量时，台阶等多产物配方可能按固定方案放大原料数量。
 
 ## 构建
 
@@ -53,7 +57,9 @@ sh ./gradlew test build
 
 Windows 使用 `gradlew.bat test build`。输出在 `build/libs/`，发布包不包含测试源码。
 
-`src/integrationTest` 以及未单独更新的早期文档来自仓库原有 0.3.6 历史资料，不是恢复出的 0.4.6 测试集。不得用历史验证记录代替当前实机验收。
+## 验证状态
+
+Java 17 编译与打包通过，19 项材料分配单元测试通过。实机界面、发包及服务器未安装本附属时的联机行为尚未验证。详见 [验证记录](docs/VALIDATION-0.4.6.md)。
 
 ## 许可证
 
